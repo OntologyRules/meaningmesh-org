@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meaning Mesh: the layer between data and action</title>
+<meta name="description" content="The Meaning Mesh is the distributed layer of definitions, assumptions, narratives, incentives and permissions that sits between data and action. Defined in Predictable Volatility by Andrew J. Turner.">
+<link rel="canonical" href="https://meaningmesh.org/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meaning Mesh">
+<meta property="og:description" content="The layer between data and action, and the four conditions that keep it sound.">
+<meta property="og:url" content="https://meaningmesh.org/">
+<meta name="author" content="Andrew J. Turner">
+<meta name="theme-color" content="#F5F6F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10151F" media="(prefers-color-scheme: dark)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Meaning Mesh",
+  "description": "The distributed layer of definitions, assumptions, narratives, incentives and permissions that sits between data and action. It determines what counts as a signal, how ambiguity is resolved, which definitions are treated as fixed, and who is authorised to pause execution.",
+  "url": "https://meaningmesh.org/",
+  "datePublished": "2026-09-28",
+  "author": { "@type": "Person", "name": "Andrew J. Turner" },
+  "citation": {
+    "@type": "Book",
+    "name": "Predictable Volatility: Why Meaning — Not Models — Determines Whether AI Breaks You or Builds You",
+    "author": { "@type": "Person", "name": "Andrew J. Turner" },
+    "publisher": { "@type": "Organization", "name": "Thin Leaf Press" },
+    "isbn": "978-1-968318-62-8",
+    "datePublished": "2026"
+  }
+}
+</script>
+
+<style>
+  :root {
+    --bg: #F5F6F8;
+    --panel: #ECEFF4;
+    --ink: #172033;
+    --muted: #56607A;
+    --rule: #CDD2DE;
+    --accent: #1B6B66;
+    --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10151F;
+      --panel: #171E2C;
+      --ink: #E7EAF1;
+      --muted: #A0A9BD;
+      --rule: #2B3345;
+      --accent: #5FBDB5;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    line-height: 1.68;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    width: min(100% - 2.5rem, 42rem);
+    margin-inline: auto;
+  }
+
+  a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .masthead {
+    padding-block: 1.75rem 0;
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+  .masthead a { color: var(--muted); }
+  .masthead .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+  /* The definition entry: the one memorable element */
+  .entry {
+    position: relative;
+    margin-top: clamp(3rem, 9vw, 6rem);
+    padding-left: 1.75rem;
+  }
+  .entry::before, .entry::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: var(--accent);
+  }
+  .entry::before { left: 0; top: 0; height: 56%; }
+  .entry::after  { left: 5px; top: 60%; bottom: 0; }
+
+  h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+  }
+  .pos {
+    margin: 0.75rem 0 0;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.0625rem;
+  }
+  .lede {
+    margin: 1.25rem 0 0;
+    font-size: clamp(1.3rem, 3.4vw, 1.6rem);
+    line-height: 1.45;
+    font-weight: 400;
+  }
+  .after {
+    margin: 1rem 0 0;
+    color: var(--muted);
+  }
+  .origin {
+    margin: 1.5rem 0 0;
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  section { margin-top: clamp(3rem, 8vw, 4.5rem); }
+  h2 {
+    margin: 0 0 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  p { margin: 0 0 1rem; }
+
+  dl { margin: 0; }
+  dt {
+    margin-top: 1.75rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  dt:first-child { margin-top: 0; }
+  dd { margin: 0.35rem 0 0; }
+  dd + dd { margin-top: 0.6rem; }
+  .note { color: var(--muted); }
+
+  .cite {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.1rem 1.25rem;
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  .cite p { margin: 0 0 0.75rem; overflow-wrap: anywhere; }
+  .cite p:last-of-type { margin-bottom: 1rem; }
+  button.copy {
+    font: inherit;
+    font-weight: 500;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--muted);
+    border-radius: 4px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+  }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+  .status { margin-left: 0.75rem; color: var(--muted); }
+
+  footer {
+    margin-top: clamp(3.5rem, 9vw, 5.5rem);
+    padding-block: 1.5rem 3rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+  footer p { margin: 0 0 0.4rem; }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 30rem) {
+    body { font-size: 1.125rem; }
+    .entry { padding-left: 1.25rem; }
+  }
+</style>
+</head>
+
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <span>MeaningMesh.org</span>
+    <a href="https://github.com/OntologyRules">OntologyRules on GitHub</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <article class="entry" aria-labelledby="term">
+      <h1 id="term">Meaning Mesh</h1>
+      <p class="pos">noun</p>
+      <p class="lede">The distributed layer of definitions, assumptions, narratives, incentives and permissions that sits between data and action. It determines what counts as a signal, how ambiguity is resolved, which definitions are treated as fixed, and who is authorised to pause execution.</p>
+      <p class="after">When it is invisible and unexamined, it is the primary site of organisational meaning failure. Making it visible is the first act of interpretive resilience.</p>
+      <p class="origin">Defined in <em>Predictable Volatility</em> by Andrew J. Turner (Thin Leaf Press, 2026), Chapter 9.</p>
+    </article>
+
+    <section aria-labelledby="conditions">
+      <h2 id="conditions">Four conditions for interpretive integrity</h2>
+      <p>Each condition is a question an organisation should be able to answer with evidence rather than aspiration.</p>
+      <dl>
+        <dt>Definition integrity</dt>
+        <dd>If a system acts on a concept such as risk, fraud, value or fairness, can you show where that concept is explicitly defined, who is authorised to revise it, and when it was last examined against current conditions?</dd>
+
+        <dt>Context preservation</dt>
+        <dd>When a system produces a decision, recommendation or score, can the human responsible for acting on it reconstruct why, including the assumptions applied and the confidence bounds?</dd>
+
+        <dt>Contestability</dt>
+        <dd>Does a formal, protected path exist for someone to say “this no longer makes sense”, and does that statement interrupt execution rather than enter a review cycle?</dd>
+        <dd class="note">A complaints procedure or appeal right that cannot interrupt execution is the form of contestability without its function.</dd>
+
+        <dt>Drift detection</dt>
+        <dd>Do monitoring mechanisms track whether the meanings a system enforces remain accurate, or only whether performance metrics sit within expected ranges?</dd>
+        <dd class="note">The monitoring that matters is semantic, not statistical.</dd>
+      </dl>
+      <p style="margin-top:1.75rem">The four conditions are not sequential steps. They are interdependent: remove one and the others degrade. The Meaning Mesh holds only when all four are present at the same time.</p>
+    </section>
+
+    <section aria-labelledby="distinct">
+      <h2 id="distinct">What it is not</h2>
+      <p>The Meaning Mesh is not a document, a model or a policy, and it is not a checklist. It is a structural dependency. The four conditions are a diagnostic lens, not a framework to implement.</p>
+      <p>Statistical drift monitoring and human-in-the-loop oversight are both valuable. Both assume that an interpretive layer exists and is sound, and neither is designed to provide it.</p>
+    </section>
+
+    <section aria-labelledby="terms">
+      <h2 id="terms">Related terms</h2>
+      <dl>
+        <dt>Meaning Audit</dt>
+        <dd>A structured examination of an organisation’s Meaning Mesh, to surface where definitions have expired without revision, where context has been separated from outputs, where contestability is decorative rather than operational, and where Meaning Drift has accumulated undetected.</dd>
+
+        <dt>Meaning Drift</dt>
+        <dd>The slow divergence of an interpretation from reality while internal metrics continue to look normal.</dd>
+
+        <dt>Meaning Debt</dt>
+        <dd>The growing gap between an organisation’s narrative and the reality it is operating in.</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="applied">
+      <h2 id="applied">Open ontology work</h2>
+      <p>OntologyRules develops open reference ontologies built from public standards. Its work is published on <a href="https://github.com/OntologyRules">GitHub</a>.</p>
+    </section>
+
+    <section aria-labelledby="cite">
+      <h2 id="cite">Cite this page</h2>
+      <div class="cite">
+        <p id="citation">Turner, A. J. (2026). Meaning Mesh. MeaningMesh.org. https://meaningmesh.org. Version 1.0, published 28 September 2026. Defined in: Turner, A. J. (2026). Predictable Volatility: Why Meaning — Not Models — Determines Whether AI Breaks You or Builds You. Los Angeles: Thin Leaf Press. Chapter 9. ISBN 978-1-968318-62-8.</p>
+        <button class="copy" type="button" id="copyBtn">Copy citation</button><span class="status" id="copyStatus" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Version 1.0, published 28 September 2026.</p>
+    <p>Every change to this page is recorded in the <a href="https://github.com/OntologyRules/meaningmesh-org/commits/main">repository history</a>.</p>
+    <p>Corrections: <a href="mailto:hello@meaningmesh.com">hello@meaningmesh.com</a></p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copyBtn');
+    var status = document.getElementById('copyStatus');
+    var source = document.getElementById('citation');
+    if (!btn || !source) return;
+
+    function done(msg) {
+      status.textContent = msg;
+      setTimeout(function () { status.textContent = ''; }, 2500);
+    }
+
+    function fallback() {
+      var range = document.createRange();
+      range.selectNodeContents(source);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      done('Selected. Press copy on your device.');
+    }
+
+    btn.addEventListener('click', function () {
+      var text = source.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { done('Copied'); },
+          fallback
+        );
+      } else {
+        fallback();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
